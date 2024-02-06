@@ -27544,12 +27544,13 @@ const Body = ()=>{
         getRestaurant();
     }, []);
     async function getRestaurant() {
-        const data = await fetch("https://www.swiggy.com/mapi/homepage/getCards?lat=20.3506773&lng=85.80633600000002");
+        // const data= await fetch("https://www.swiggy.com/mapi/homepage/getCards?lat=20.3506773&lng=85.80633600000002")
+        const data = await fetch("https://www.swiggy.com/mapi/homepage/getCards?lat=23.365622&lng=85.304041");
         const json = await data.json();
-        // console.log(json);
+        console.log(json);
         //optional chaning (?)
-        setFilteredrestaurant(json.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
-        setAllRestaurant(json.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
+        setFilteredrestaurant(json.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
+        setAllRestaurant(json.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
     }
     //Conditional renderring
     //if restaurant is empty => shimmer ui
@@ -27558,7 +27559,7 @@ const Body = ()=>{
     if (!allrestaurant) return null;
     return filteredrestaurant?.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
         fileName: "src/components/Body.js",
-        lineNumber: 39,
+        lineNumber: 40,
         columnNumber: 46
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
@@ -27574,7 +27575,7 @@ const Body = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 42,
+                        lineNumber: 43,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -27588,13 +27589,13 @@ const Body = ()=>{
                         children: "Search"
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 53,
+                        lineNumber: 54,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Body.js",
-                lineNumber: 41,
+                lineNumber: 42,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27603,7 +27604,7 @@ const Body = ()=>{
                     children: "No Restaurant Found"
                 }, void 0, false, {
                     fileName: "src/components/Body.js",
-                    lineNumber: 71,
+                    lineNumber: 72,
                     columnNumber: 19
                 }, undefined) : filteredrestaurant?.map((restaurant)=>{
                     return /*#__PURE__*/ (0, _react.createElement)((0, _restaurantCardDefault.default), {
@@ -27611,7 +27612,7 @@ const Body = ()=>{
                         key: restaurant.info.id,
                         __source: {
                             fileName: "src/components/Body.js",
-                            lineNumber: 74,
+                            lineNumber: 75,
                             columnNumber: 32
                         },
                         __self: undefined
@@ -27619,7 +27620,7 @@ const Body = ()=>{
                 })
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 66,
+                lineNumber: 67,
                 columnNumber: 13
             }, undefined)
         ]

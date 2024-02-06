@@ -19,12 +19,13 @@ const Body= () => {
 
     async function getRestaurant(){
 
-        const data= await fetch("https://www.swiggy.com/mapi/homepage/getCards?lat=20.3506773&lng=85.80633600000002")
+        // const data= await fetch("https://www.swiggy.com/mapi/homepage/getCards?lat=20.3506773&lng=85.80633600000002")
+        const data = await fetch("https://www.swiggy.com/mapi/homepage/getCards?lat=23.365622&lng=85.304041")
         const json= await data.json();
-        // console.log(json);
+        console.log(json);
         //optional chaning (?)
-        setFilteredrestaurant(json.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
-        setAllRestaurant(json.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
+        setFilteredrestaurant(json.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
+        setAllRestaurant(json.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
         
     }
 
