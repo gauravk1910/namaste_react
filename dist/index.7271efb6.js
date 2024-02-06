@@ -27544,8 +27544,8 @@ const Body = ()=>{
         getRestaurant();
     }, []);
     async function getRestaurant() {
-        // const data= await fetch("https://www.swiggy.com/mapi/homepage/getCards?lat=20.3506773&lng=85.80633600000002")
-        const data = await fetch("https://www.swiggy.com/mapi/homepage/getCards?lat=23.365622&lng=85.304041");
+        const data = await fetch("https://www.swiggy.com/mapi/homepage/getCards?lat=20.3506773&lng=85.80633600000002");
+        //const data = await fetch("https://www.swiggy.com/mapi/homepage/getCards?lat=23.365622&lng=85.304041")
         const json = await data.json();
         console.log(json);
         //optional chaning (?)
