@@ -40,4 +40,17 @@
   height: 50%;
 }
 
+.shimmer {
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.shimmer-card {
+  background-color: #c0bbbb;
+  border-radius: 10px;
+  width: 200px;
+  height: 300px;
+  margin: 20px;
+}
+
 /*# sourceMappingURL=index.9e4c6fd2.css.map */
